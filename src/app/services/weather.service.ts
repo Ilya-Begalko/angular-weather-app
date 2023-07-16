@@ -10,7 +10,6 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getWeatherData(cityName: string) {
-    cityName='omsk'
     return this.http.get<any>(environment.weatherApiBaseUrl, {
       headers: new HttpHeaders()
         .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)

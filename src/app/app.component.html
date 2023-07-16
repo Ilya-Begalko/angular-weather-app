@@ -1,11 +1,17 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="Search city" name="city" [(ngModel)]="cityName"/>
+  </form>
+</div>
+
 <div class="container">
   <div class="upper-data">
-    <img src="../assets/images/hot.jpg" alt="hot_weather" *ngIf="14 > 15">
-    <img src="../assets/images/cold.jpg" alt="cold_weather" *ngIf="14 <= 15">
+    <img src="../assets/images/hot.jpg" alt="hot_weather" *ngIf="weatherData?.tempC > 15">
+    <img src="../assets/images/cold.jpg" alt="cold_weather" *ngIf="weatherData?.tempC <= 15">
 
     <div class="weather-data">
-      <div class="location">Omsk</div>
-      <div class="temperature">{{14.40 | number: '1.0-0'}}°C</div>
+      <div class="location">{{weatherData?.location}}</div>
+      <div class="temperature">{{weatherData?.tempC | number: '1.0-0'}}°C</div>
     </div>
   </div>
 
@@ -17,19 +23,19 @@
       <div class="info-block">
         <div class="info-block__label">
           <img src="../assets/images/min.png">
-          <span>Min</span>
+          <span>Feels like</span>
         </div>
         <div class="info-block__value">
-          10°C
+          {{weatherData?.feelsLike | number: '1.0-0'}}°C
         </div>
       </div>
       <div class="info-block">
         <div class="info-block__label">
-          <img src="../assets/images/max.png">
-          <span>Max</span>
+          <img src="../assets/images/cloud.png">
+          <span>Clouds</span>
         </div>
         <div class="info-block__value">
-          10°C
+          {{weatherData?.cloud}}%
         </div>
       </div>
       <div class="info-block">
@@ -38,7 +44,7 @@
           <span>Humidity</span>
         </div>
         <div class="info-block__value">
-          10°C
+          {{weatherData?.humidity}}%
         </div>
       </div>
       <div class="info-block">
@@ -47,7 +53,7 @@
           <span>Wind</span>
         </div>
         <div class="info-block__value">
-          10°C
+          {{weatherData?.wind}} km/h
         </div>
       </div>
     </div>

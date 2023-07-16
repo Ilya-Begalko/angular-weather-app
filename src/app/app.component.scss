@@ -1,5 +1,25 @@
 @import '../styles.scss';
 
+.search{
+    margin-bottom: 1em;
+    text-align: center;
+
+
+    input::-moz-placeholder { color: $grey; }
+    input::-webkit-input-placeholder { color: $grey; }
+
+    input{
+        background-color: $shadow-light;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        padding: 1em;
+        color: $grey;
+        font-size: 0.8em;
+        text-align: center;
+    }
+}
+
 .container{
     width: 500px;
     height: 80vh;
@@ -64,6 +84,7 @@
 
     .more-info-label{
         color: $white;
+        font-size: 1.2em;
     }
     .more-info-container{
         flex: 1;
@@ -94,7 +115,7 @@
 
                 span{
                     color: $white;
-                    font-size: 1.2em;
+                    font-size: 1em;
                 }
             }
 
@@ -104,7 +125,7 @@
                 justify-content: flex-start;
                 align-items: center;
                 color: $white;
-                font-size: 1.5em;
+                font-size: 1.3em;
                 margin-left: 0.1em;
             }
         }
