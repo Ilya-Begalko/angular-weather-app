@@ -1,0 +1,112 @@
+@import '../styles.scss';
+
+.container{
+    width: 500px;
+    height: 80vh;
+    background-color: $blue-2;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px $shadow-dark;
+}
+
+.upper-data{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    img{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .weather-data{
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+
+        background-color: $shadow-dark;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .location{
+            color: $white;
+            text-align: center;
+            font-size: 3em;
+        }
+
+        .temperature{
+            color: $white;
+            font-size: 6.5em;
+            align-items: center;
+            font-weight: 900;
+        }
+    }
+}
+
+.lower-data{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+
+    .more-info-label{
+        color: $white;
+    }
+    .more-info-container{
+        flex: 1;
+        background-color: $shadow-light;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-top: 1em;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .info-block{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+
+            &__label{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    width: 4em;
+                }
+
+                span{
+                    color: $white;
+                    font-size: 1.2em;
+                }
+            }
+
+            &__value{
+                width: 50%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                color: $white;
+                font-size: 1.5em;
+                margin-left: 0.1em;
+            }
+        }
+    }
+}
